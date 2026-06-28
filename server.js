@@ -100,7 +100,6 @@ async function normalizeTrack(track) {
   };
 }
 
-// Root route
 app.get("/", (req, res) => {
   res.json({
     success: true,
@@ -112,7 +111,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// Recent tracks
 app.get("/recent-tracks", async (req, res) => {
   try {
     const limit = req.query.limit || 10;
@@ -150,7 +148,6 @@ app.get("/recent-tracks", async (req, res) => {
   }
 });
 
-// Now playing / latest track
 app.get("/now-playing", async (req, res) => {
   try {
     const response = await axios.get(LASTFM_BASE_URL, {
